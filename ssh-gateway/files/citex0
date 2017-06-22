@@ -1,0 +1,21 @@
+# Define here some setting that can be useful for every account
+defaults
+        logfile /var/log/msmtp/general.log
+
+# Settings for citex0 account
+account citex0
+        protocol smtp
+        host smtp.gmail.com
+        tls on
+        #tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+        tls_trust_file /etc/pki/tls/certs/ca-bundle.crt
+        port 587
+        auth login
+        user <user>
+        password <pass>
+        from <from>
+        logfile /var/log/msmtp/citex0.log
+
+# If you don't use any "-a" parameter in your command line,
+# the default account "citex0" will be used.
+account default: citex0
